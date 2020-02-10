@@ -18,7 +18,7 @@ def plugin_unload():
 
 plugin_info = {
     'version' : '0.1.0',
-    'name' : 'FileManager'',
+    'name' : 'FileManager',
     'category_name' : 'service',
     'icon' : '',
     'developer' : 'soju6jan',
