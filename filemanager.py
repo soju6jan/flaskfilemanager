@@ -150,6 +150,7 @@ def index():
 
 
 @filemanager_blueprint.route('/config/filemanager.config.json')
+@login_required
 def filemanager_config_json():
     if _custom_config_json_path:
         parts = os.path.split(_custom_config_json_path)
@@ -159,6 +160,7 @@ def filemanager_config_json():
 
 
 @filemanager_blueprint.route('/config/filemanager.init.js')
+@login_required
 def filemanager_init_js():
     if _custom_init_js_path:
         parts = os.path.split(_custom_init_js_path)
@@ -168,12 +170,14 @@ def filemanager_init_js():
 
 
 @filemanager_blueprint.route('/userfiles/<path:filename>')
+@login_required
 def userfile(filename):
     root_dir = os.getcwd()
     return send_from_directory(os.path.join(root_dir, _FILE_PATH), filename)
 
 
 @filemanager_blueprint.route('/connectors/py/filemanager.py')
+@login_required
 def connector():
     # Access control
     if _access_control_function and not _access_control_function():
@@ -227,6 +231,7 @@ def connector():
 
 
 @filemanager_blueprint.route('/connectors/py/filemanager.py', methods=['POST'])
+@login_required
 def post_connector():
     # Access control
     if _access_control_function and not _access_control_function():
