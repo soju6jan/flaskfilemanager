@@ -673,5 +673,3 @@ def get_image():
         return response
 
     return send_from_directory(_FILE_PATH, web_path_to_local(web_path), as_attachment=True)
-
-
