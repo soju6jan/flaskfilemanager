@@ -204,8 +204,8 @@ def connector():
     elif mode == 'copy':
         resp = copy_file()
     elif mode == 'editfile':
-        #resp = edit_file()
-        resp = error('Non implemented: editfile')
+        resp = edit_file()
+        #resp = error('Non implemented: editfile')
     elif mode == 'delete':
         resp = delete_file()
     elif mode == 'download':
@@ -353,8 +353,8 @@ def edit_file():
     os_file_path = web_path_to_os_path(path)
     
     # Load the contents of the file
-    #content = util.read_file(os_file_path).decode()
-    content = 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'
+    content = util.read_file(os_file_path).decode()
+    #content = 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'
     return get_file(path=path, content=content)
 
 
