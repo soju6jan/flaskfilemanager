@@ -29,5 +29,6 @@ plugin_info = {
     'more' : '',
 }
 
+import os
 from tool_base import ToolUtil
 ToolUtil.save_dict(plugin_info, os.path.join(os.path.dirname(__file__), 'info.json'))
