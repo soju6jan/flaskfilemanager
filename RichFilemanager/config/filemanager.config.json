@@ -1,7 +1,7 @@
 {
     "_comment": "IMPORTANT : go to the wiki page to know about options configuration https://github.com/servocoder/RichFilemanager/wiki/Configuration-options",
     "options": {
-        "theme": "flat-dark",
+        "theme": "default",
         "showTitleAttr": false,
         "showConfirmation": true,
         "browseOnly": false,
@@ -25,7 +25,7 @@
     },
     "language": {
         "default": "en",
-        "available": ["ar", "bs", "ca", "cs", "da", "de", "el", "en", "es", "fa", "fi", "fr", "he", "hu", "it", "ja", "nl", "pl", "pt", "ru", "sv", "th", "tr", "vn", "zh-cn", "zh-tw"]
+        "available": []
     },
     "filetree": {
         "enabled": true,
@@ -99,8 +99,8 @@
                 "webm",
                 "m4v"
             ],
-            "playerWidth": 400,
-            "playerHeight": 222
+            "playerWidth": 960,
+            "playerHeight": 540
         },
         "audio": {
             "enabled": true,
@@ -196,7 +196,10 @@
             "html",
             "txt",
             "csv",
-            "md"
+            "md",
+            "py",
+            "yaml",
+            "sh"
         ]
     },
     "customScrollbar": {

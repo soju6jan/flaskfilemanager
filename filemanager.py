@@ -9,7 +9,7 @@ from collections import OrderedDict
 import datetime
 import io
 
-from flask import Blueprint, request, make_response, send_from_directory, abort, url_for
+from flask import Blueprint, request, make_response, send_from_directory, abort, url_for, render_template
 #from littlefish import util, imageutil
 
 
@@ -30,7 +30,7 @@ _FILE_PATH = None
 _URL_PREFIX = None
 
 filemanager_blueprint = Blueprint('flaskfilemanager', __name__, url_prefix='/flaskfilemanager', 
-        static_folder='RichFilemanager', static_url_path=''  )
+        template_folder='templates', static_folder='RichFilemanager', static_url_path=''  )
 
 
 def set_access_control_function(fun):
@@ -145,8 +145,8 @@ def index():
     if _access_control_function and not _access_control_function():
         abort(404)
     
-    return filemanager_blueprint.send_static_file('index.html')
-    #return render_template('index.html')
+    #return filemanager_blueprint.send_static_file('index.html')
+    return render_template('flaskfilemanager_index.html')
 
 
 @filemanager_blueprint.route('/config/filemanager.config.json')
@@ -353,8 +353,11 @@ def edit_file():
     os_file_path = web_path_to_os_path(path)
     
     # Load the contents of the file
-    content = util.read_file(os_file_path).decode()
+    from tool_base import ToolBaseFile
+
+    #content = util.read_file(os_file_path).decode()
     #content = 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'
+    content = ToolBaseFile.read(os_file_path)
     return get_file(path=path, content=content)
 
 

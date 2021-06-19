@@ -1,7 +1,19 @@
-{% extends "base.html" %}
-{% block content %}
-<!DOCTYPE html>
-<html>
+{% from "menu.html" import menu, left, menu_sub with context %}
+{% import "macro.html" as macros %}
+
+
+
+{% block head %}
+<title>{{get_web_title()}}</title>
+{% endblock %}
+<link rel="shortcut icon" type="image/x-icon" href="{{ url_for('flaskcode.static', filename='img/favicon.ico') }}" />
+{% set theme = get_theme() %}
+
+<script type="text/javascript" src="{{ url_for('flaskcode.static', filename='vendor/jquery.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('flaskcode.static', filename='vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+<link href="{{ url_for('static', filename='css/theme/'+theme[0]+'_bootstrap.min.css') }}" rel="stylesheet">   
+<link href="{{ url_for('static', filename='css/custom.css') }}" rel="stylesheet">
+<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
 
 <link rel="stylesheet" type="text/css" href="styles/reset.css" />
 <link rel="stylesheet" type="text/css" href="styles/filemanager.css" />
@@ -22,6 +34,17 @@
         z-index: 999;
     }
 </style>
+<style type="text/css">
+	.nav-tabs { margin-bottom: 0; }
+	.navbar-nav li:hover>.dropdown-menu { display: block; }
+	.dropdown-toggle::after { display:none; }
+	
+	body { font-size: .850rem; }
+	
+  </style>
+{{ menu() }}
+<!-- body { padding-top: 46px; font-size: .850rem; } -->
+
 <div class="fm-container">
 	<div class="fm-loading-wrap"><!-- loading wrapper / removed when loaded --></div>
 	<div class="fm-wrapper">
@@ -445,5 +468,3 @@
 	</div>
 </div>
 
-
-{% endblock %}
