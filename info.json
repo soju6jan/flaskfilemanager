@@ -1,1 +1,10 @@
-{"more": "", "version": "0.1.0", "name": "FileManager", "developer": "soju6jan", "home": "https://github.com/soju6jan/flaskfilemanager", "description": "FileManager", "icon": "", "category_name": "service"}
+{
+    "version": "1.0.0",
+    "name": "파일 매니저",
+    "category_name": "system",
+    "icon": "",
+    "developer": "soju6jan",
+    "description": "RichFilemanager를 Flask에서 동작하도록 한 FlaskFileManager 포크",
+    "home": "https://github.com/soju6jan/flaskfilemanager",
+    "more": ""
+}
