@@ -11,7 +11,7 @@
         "quickSelect": false,
         "logger": false,
         "allowFolderDownload": true,
-        "allowChangeExtensions": false,
+        "allowChangeExtensions": true,
         "capabilities": [
             "select",
             "upload",
@@ -37,7 +37,7 @@
         "minWidth": 200
     },
     "manager": {
-        "defaultViewMode": "grid",
+        "defaultViewMode": "list",
         "dblClickOpen": false,
         "selection": {
             "enabled": true,
@@ -97,7 +97,8 @@
                 "ogv",
                 "mp4",
                 "webm",
-                "m4v"
+                "m4v",
+                "mkv"
             ],
             "playerWidth": 960,
             "playerHeight": 540
@@ -198,11 +199,11 @@
             "csv",
             "md",
             "py",
-            "yaml",
+            "yaml", "yml",
             "sh",
             "bat",
             "json",
-            "pem"
+            "pem", "php", "js", "css", "conf"
         ]
     },
     "customScrollbar": {
