@@ -644,8 +644,15 @@ def download_file():
         abort(404)
     
     if os.path.isdir(os_path):
-        return 'TODO: download directory as zip'
-
+        from tool_base import ToolBaseFile
+        web_path = ToolBaseFile.makezip(os_path, zip_folder='tmp')
+        web_path = web_path.replace(_FILE_PATH, '')
+        #return 'TODO: download directory as zip'
+    else:
+        pass
+    #print(_FILE_PATH)
+    #print(web_path)
+    #print(web_path_to_local(web_path))
     return send_from_directory(_FILE_PATH, web_path_to_local(web_path), as_attachment=True)
 
 
