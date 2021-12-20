@@ -11,7 +11,8 @@ __author__ = 'Stephen Brown (Little Fish Solutions LTD)'
 
 def plugin_load():
     from framework import app, path_app_root
-    app.config['FLASKFILEMANAGER_FILE_PATH'] = path_app_root
+    #app.config['FLASKFILEMANAGER_FILE_PATH'] = path_app_root
+    app.config['FLASKFILEMANAGER_FILE_PATH'] = '/'
     init(app)
 
 def plugin_unload():
